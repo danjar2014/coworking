@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier 21 – Réservez votre table</title>
+<meta name="description" content="Espace de coworking (site de test) : choisissez une date, un créneau et réservez votre table en quelques clics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#reserver">Aller à la réservation</a>
+
+<header class="top">
+  <a class="brand" href="#">Atelier&nbsp;21</a>
+  <nav aria-label="Principal">
+    <a href="#espace">L'espace</a>
+    <a href="#reserver">Réserver</a>
+    <a href="#mes-reservations">Mes réservations</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="haut">
+    <div class="hero-text">
+      <p class="eyebrow">Coworking · site de démonstration</p>
+      <h1>Une table, un créneau,<br>et vous êtes chez vous.</h1>
+      <p class="lead">Réservez en moins d'une minute. Choisissez votre jour, vos horaires et la table qui vous plaît.</p>
+      <a class="btn primary" href="#reserver">Réserver une table</a>
+    </div>
+    <div class="hero-img img-slot" data-img="hero" role="img" aria-label="Vue de l'espace de coworking"></div>
+  </section>
+
+  <section id="espace" class="espace" aria-labelledby="t-espace">
+    <h2 id="t-espace">L'espace</h2>
+    <div class="gallery">
+      <figure class="img-slot" data-img="space1" role="img" aria-label="Open space lumineux"><figcaption>Open space</figcaption></figure>
+      <figure class="img-slot" data-img="space2" role="img" aria-label="Coin café"><figcaption>Coin café</figcaption></figure>
+      <figure class="img-slot" data-img="space3" role="img" aria-label="Salle calme"><figcaption>Salle calme</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="reserver" class="booking" aria-labelledby="t-res">
+    <h2 id="t-res">Réserver une table</h2>
+
+    <ol class="steps" aria-label="Étapes">
+      <li class="on" data-step="1">1. Créneau</li>
+      <li data-step="2">2. Table</li>
+      <li data-step="3">3. Coordonnées</li>
+    </ol>
+
+    <div class="grid">
+      <div class="panel">
+        <fieldset class="field">
+          <legend>Date</legend>
+          <label for="date" class="sr">Date de réservation</label>
+          <input type="date" id="date">
+        </fieldset>
+
+        <div class="row2">
+          <div class="field">
+            <label for="start">Début</label>
+            <select id="start"></select>
+          </div>
+          <div class="field">
+            <label for="end">Fin</label>
+            <select id="end"></select>
+          </div>
+        </div>
+        <p class="hint" id="slot-hint">Ouvert de 08:00 à 20:00, par pas de 30 min.</p>
+
+        <div class="legend" aria-hidden="true">
+          <span><i class="dot free"></i>Libre</span>
+          <span><i class="dot taken"></i>Occupée</span>
+          <span><i class="dot sel"></i>Votre choix</span>
+        </div>
+
+        <form id="form" novalidate hidden>
+          <h3>Vos coordonnées</h3>
+          <div class="field">
+            <label for="name">Nom complet</label>
+            <input id="name" autocomplete="name" required>
+            <p class="err" id="err-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" autocomplete="email" required>
+            <p class="err" id="err-email" role="alert"></p>
+          </div>
+          <div class="summary" id="summary" aria-live="polite"></div>
+          <button class="btn primary" type="submit">Confirmer la réservation</button>
+        </form>
+      </div>
+
+      <div class="panel plan-wrap">
+        <h3 id="plan-title">Plan de la salle</h3>
+        <div class="plan" id="plan" role="group" aria-labelledby="plan-title"></div>
+        <p class="hint">Choisissez un créneau valide pour voir les tables disponibles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mes-reservations" class="mine" aria-labelledby="t-mine">
+    <h2 id="t-mine">Mes réservations</h2>
+    <ul id="mine-list" class="mine-list"></ul>
+    <p class="hint" id="mine-empty">Aucune réservation pour le moment. Données enregistrées dans ce navigateur (site de test).</p>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer><p>Atelier 21 – site de démonstration. Aucune donnée n'est envoyée à un serveur.<br>Photos : <a href="https://www.pexels.com/photo/office-team-sitting-at-the-table-7651639/">Kindel Media</a>, <a href="https://www.pexels.com/photo/photo-of-a-workplace-8453801/">cottonbro studio</a>, <a href="https://www.pexels.com/photo/an-espresso-machine-6612572/">Pavel Danilyuk</a>, <a href="https://www.pexels.com/photo/small-conference-hall-in-workplace-7534213/">Max Vakhtbovych</a> sur Pexels.</p></footer>
+<script src="images.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
